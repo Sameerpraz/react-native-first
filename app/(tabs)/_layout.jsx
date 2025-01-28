@@ -3,7 +3,7 @@ import React from "react";
 import { Platform } from "react-native";
 
 import { HapticTab } from "@/components/HapticTab";
-import { IconSymbol } from "@/components/ui/IconSymbol";
+import { TabBarIcon } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
@@ -25,22 +25,32 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
-            <IconSymbol
-              name={focused ? "house.fill" : "chevron.right"}
-              size={28}
+            <TabBarIcon
+              name={focused ? "home" : "home-outline"}
               color={color}
             />
           ),
         }}
       />
       <Tabs.Screen
+        // name="contact"
+        // options={{
+        //   title: "Contact Us",
+        //   tabBarIcon: ({ color, focused }) => (
+        //     <Ionicons
+        //       size={28}
+        //       name={focused ? "people.fill" : "contact.fill"}
+        //       color={color}
+        //     />
+        //   ),
+        // }}
+
         name="contact"
         options={{
           title: "Contact Us",
           tabBarIcon: ({ color, focused }) => (
-            <IconSymbol
-              size={28}
-              name={focused ? "paperplane.fill" : "delete.fill"}
+            <TabBarIcon
+              name={focused ? "people-circle" : "people-circle-outline"}
               color={color}
             />
           ),
